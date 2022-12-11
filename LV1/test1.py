@@ -1,6 +1,2 @@
-import string
-input_string = '!hi. wh?at is the weat[h]er lik?e. !@##$%%^^&*)_+{}|?"'
-for character in string.punctuation:
-    print(character)
-    # input_string = input_string.replace(character, '')
-# print(input_string)
+list = [1, 5, 2, 6, 3, 7, 4] 
+print(list[1:4])

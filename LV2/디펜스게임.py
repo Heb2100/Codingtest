@@ -17,16 +17,16 @@
 def solution(n, k, enemy):
     from heapq import heappushpop, heappush
     heap = []
-    sum = round = 0
+    sum_total = round = 0
     for i in enemy:
-        sum += i
-        if sum <= n:
-            heappush(heap, i)
+        sum_total += i
+        if sum_total <= n:
+            heappush(heap, -i)
             round += 1
         else:
             if k>0:
                 k-= 1
-                sum += heappushpop(heap, i)
+                sum_total += heappushpop(heap, -i)
                 round += 1
     return round
 print(solution(7, 3, [4, 2, 4, 5, 3, 3, 1]))
