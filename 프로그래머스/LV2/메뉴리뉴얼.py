@@ -9,9 +9,14 @@ def solution(orders, course):
                 ans_list.append("".join(c))
     target = Counter(ans_list).most_common()
     for t in target:
+<<<<<<< HEAD
         temp = []
         for i in course:
             
+=======
+        for i in course:
+            temp = []
+>>>>>>> abcbe5050c8b8733e5d32056d4e0865a2a6f6292
             if i == t[1]:
                 temp.append(t[0])
             print(temp)
