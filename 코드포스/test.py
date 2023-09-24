@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-str = '1asdfaasdfasdf'
-=======
-str = '1asdfaasdfasdf'
->>>>>>> abcbe5050c8b8733e5d32056d4e0865a2a6f6292
-print(str[2])
+import math
+print(math.factorial(3))
+print(math.factorial(2))
+print(math.factorial(1))

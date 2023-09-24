@@ -1,13 +1,11 @@
 import sys
-t = int(sys.stdin.readline())
+a = int(sys.stdin.readline())
 
 nt_lists = []
 a_lists = []
-for i in range(t):
+for i in range(a):
     nt_lists.append(list(map(int, input().split())))
     a_lists.append(list(map(int, input().split())))
-
-print(t, nt_lists, a_lists)
 
 def answer(nt_list, a_list):
     answer_list = []
@@ -27,6 +25,6 @@ def square_finder(n, a_list, target):
         else : square_length -= 1
     return str(square_length * 2)
 
-for i in range(t):
+for i in range(a):
     print(answer(nt_lists[i], a_lists[i]))
 
