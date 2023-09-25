@@ -1,4 +1,2 @@
-import math
-print(math.factorial(3))
-print(math.factorial(2))
-print(math.factorial(1))
+list = [[1, 2, 3], [1], [1, 2], [1, 1]]
+print(list)
