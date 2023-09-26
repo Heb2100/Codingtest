@@ -16,17 +16,20 @@ def list_append(targets, s_list):
     if (targets == [()]): return 0
     for target in targets:
         answer += s_list[target]
+        answer = list(set(answer))
     return len(list(set(answer)))
 
 def answer(n, s_list):
     test_list = []
     answer_list = []
-    for i in range(n+1):
+    for i in range(n, -1, -1):
         test_list.append(list(combinations(range(n), i)))
-    print(test_list.sort(reverse=True))
+    max = list_append(test_list[0][0], s_list)
     for targets in test_list:
         for target in targets:
-            answer_list.append(list_append(target, s_list))
+            candidate = list_append(target, s_list)
+            if candidate == max -1: return candidate
+            answer_list.append(candidate)
     return list(set(answer_list))[-2]
 
 for i in range(t):
