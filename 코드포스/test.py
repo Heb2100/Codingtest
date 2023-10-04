@@ -1,12 +1,35 @@
-string = 'abcdef'
-# print(string[2:4:-1])
-# input 3 4
-# # print(string[:2]+string[3:1:-1]+string[4:])
-
-# def switch(list, str):
-#     print('1', str[:list[0]-1], '2',  str[list[1]-1:list[0]-2:-1], '3', str[list[1]:])
-#     return str[:list[0]-1]+str[list[1]-1:list[0]-2:-1]+str[list[1]:]
-# print(switch([1, 3], 'abcedfg'))
-
-#23
-print(string[0:2-1]+''.join(reversed(string[2-1:3]))+string[3:])
+import sys
+input = sys.stdin.readline
+ 
+def readList():
+    return list(map(int, input().split()))
+def readInt():
+    return int(input())
+def readInts():
+    return map(int, input().split())
+def readStr():
+    return input().strip()
+ 
+# BF, EC, DB, CC, CL
+def solve():
+    n, k = readInts()
+    arr = readList()
+    ans = [0] * k
+    idx = [[] for _ in range(k+1)]
+    for i in range(n):
+        idx[arr[i]].append(i+1)
+    print(idx[2][-1]);exit(1)
+    ma, mi = 0, n+1
+    for i in range(k, 0, -1):
+        if idx[i]:
+            L, R = n+1, 0
+            ma, mi = max(ma, idx[i][-1]), min(mi, idx[i][0])
+            for j in idx[i]:
+                L = min(L, min(j, mi))
+                R = max(R, max(j, ma))
+            ans[i-1] = (R - L + 1) * 2
+    return ans
+ 
+ 
+for _ in range(int(input())):
+    print(*solve())
